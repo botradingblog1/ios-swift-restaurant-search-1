@@ -1,0 +1,5 @@
+source 'https://github.com/CocoaPods/Specs.git'
+target 'ios-swift-restaurant-search-1' do
+  pod 'GoogleMaps', '4.1.0'
+  pod 'GooglePlaces', '4.1.0'
+end
