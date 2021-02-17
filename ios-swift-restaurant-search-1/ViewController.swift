@@ -81,8 +81,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         placesClient.lookUpPlaceID((placeID)) { [unowned self] (place, error) in
             if (error == nil) {
                 self.selectedPlace = CLLocation.init(latitude: (place?.coordinate.latitude)!, longitude: (place?.coordinate.longitude)!)
-                //print(place?.coordinate.latitude)
-                //print(place?.coordinate.longitude)
                 
                 self.tableView.isHidden = true
                 self.searchController?.dismiss(animated: true, completion: { [unowned self] in
@@ -179,16 +177,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 initialLocationSet =  true
                 moveMap(coordinate: location.coordinate)
             }
-            
-            /* var output = "Latitude: \(location.coordinate.latitude)\n"
-            output = "\(output)Longitude: \(location.coordinate.longitude)\n"
-            output = "\(output)Altitude: \(location.altitude)\n"
-            output = "\(output)Speed: \(location.speed)\n"
-            output = "\(output)SpeedAccuracy: \(location.speedAccuracy)\n"
-            output = "\(output)Course: \(location.course)\n"
-            output = "\(output)courseAccuracy: \(location.courseAccuracy)\n"
-            
-            outputLabel.text = output*/
         }
     }
     
